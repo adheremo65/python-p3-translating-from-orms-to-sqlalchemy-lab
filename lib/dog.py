@@ -2,11 +2,11 @@ from models import Dog
 from sqlalchemy import (Column,String,Integer,create_engine,)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-Base = declarative_base()
-def create_table(base,engine):
+base = declarative_base()
+def create_table(engine):
     if __name__ == "__main__":
         create_engine("sqlite:///:memory:")
-        Base.metadata.create_all(engine)
+        base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
         
